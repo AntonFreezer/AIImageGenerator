@@ -546,14 +546,14 @@
 		2C6646938DCA5D445F115F7AFA8351D8 /* ShapeContainerLayer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ShapeContainerLayer.swift; path = Sources/Private/MainThread/NodeRenderSystem/RenderLayers/ShapeContainerLayer.swift; sourceTree = "<group>"; };
 		2C7B7B55677D683E531494EF0FDAB171 /* DotLottieAnimation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DotLottieAnimation.swift; path = Sources/Private/Model/DotLottie/DotLottieAnimation.swift; sourceTree = "<group>"; };
 		2CB934023E997B633BF16B9714BA92BE /* Kingfisher-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Kingfisher-dummy.m"; sourceTree = "<group>"; };
-		2D9237C64886D171E59CF1540C5D3DFC /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; includeInIndex = 1; name = PrivacyInfo.xcprivacy; path = Sources/PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
+		2D9237C64886D171E59CF1540C5D3DFC /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xml; name = PrivacyInfo.xcprivacy; path = Sources/PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 		2F41577071A50B65C4D8E472F990EA23 /* DotLottieCacheProvider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DotLottieCacheProvider.swift; path = Sources/Public/DotLottie/Cache/DotLottieCacheProvider.swift; sourceTree = "<group>"; };
 		2FA1C48A8387E6AFB27AEDD9768194D1 /* SnapKit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SnapKit.release.xcconfig; sourceTree = "<group>"; };
 		300FDDD3519E009DF28C70142C18BABD /* TestHelpers.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TestHelpers.swift; path = Sources/Private/Utility/Debugging/TestHelpers.swift; sourceTree = "<group>"; };
 		311FA55C1FA5C0E4D10C05038AFD86F6 /* ImageAsset.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ImageAsset.swift; path = Sources/Private/Model/Assets/ImageAsset.swift; sourceTree = "<group>"; };
 		3165212933705576B527177707D75D7A /* InterpolatableExtensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = InterpolatableExtensions.swift; path = Sources/Private/Utility/Interpolatable/InterpolatableExtensions.swift; sourceTree = "<group>"; };
 		31748354B8778EEA659C52C41895C5A3 /* Kingfisher.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Kingfisher.release.xcconfig; sourceTree = "<group>"; };
-		334FD0A6F31C3462502BF14C12EAFC6E /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; includeInIndex = 1; name = PrivacyInfo.xcprivacy; path = Sources/PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
+		334FD0A6F31C3462502BF14C12EAFC6E /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xml; name = PrivacyInfo.xcprivacy; path = Sources/PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 		33B09D4479F90B64BFB7D28D450F2F16 /* GradientStrokeNode.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GradientStrokeNode.swift; path = Sources/Private/MainThread/NodeRenderSystem/Nodes/RenderNodes/GradientStrokeNode.swift; sourceTree = "<group>"; };
 		34105FEDDC7CB4C6C971A2B8AC3E92CA /* Entry.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Entry.swift; path = Sources/Private/EmbeddedLibraries/ZipFoundation/Entry.swift; sourceTree = "<group>"; };
 		3429171BD44A7E8E01461F1302927B5A /* EasyTipView-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "EasyTipView-Info.plist"; sourceTree = "<group>"; };
@@ -700,7 +700,7 @@
 		8949B7A738408639DA31FCDD18FFE4E7 /* LottieAnimationCache.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LottieAnimationCache.swift; path = Sources/Public/AnimationCache/LottieAnimationCache.swift; sourceTree = "<group>"; };
 		89C71C5304C5F99BCF068137919C1EF4 /* FloatValueProvider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FloatValueProvider.swift; path = Sources/Public/DynamicProperties/ValueProviders/FloatValueProvider.swift; sourceTree = "<group>"; };
 		8A4AB60C12C6C4674C9D8F1E4C428A24 /* Glyph.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Glyph.swift; path = Sources/Private/Model/Text/Glyph.swift; sourceTree = "<group>"; };
-		8A63F6AA6A1D241970B6D28C2970A8B9 /* EasyTipView */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = EasyTipView; path = EasyTipView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8A63F6AA6A1D241970B6D28C2970A8B9 /* EasyTipView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = EasyTipView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8AFB600C6EF6684931B1178042415F55 /* NodeProperty.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NodeProperty.swift; path = Sources/Private/MainThread/NodeRenderSystem/NodeProperties/NodeProperty.swift; sourceTree = "<group>"; };
 		8CC16F5174A66BE5A3044E54ADCB17C5 /* KeyframeData.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = KeyframeData.swift; path = Sources/Private/Model/Keyframes/KeyframeData.swift; sourceTree = "<group>"; };
 		8CDC4B6B970155DDFB8976650219D086 /* Collection+Diff.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Collection+Diff.swift"; path = "Sources/Private/EmbeddedLibraries/EpoxyCore/Diffing/Collection+Diff.swift"; sourceTree = "<group>"; };
@@ -731,7 +731,7 @@
 		9ACEA6B82D7092F77EDAC1371AABB44B /* Interpolatable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Interpolatable.swift; path = Sources/Public/Keyframes/Interpolatable.swift; sourceTree = "<group>"; };
 		9B56270219A4DC25CEED1D5AC8AD64F5 /* ConstraintRelation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintRelation.swift; path = Sources/ConstraintRelation.swift; sourceTree = "<group>"; };
 		9C27A1E520421FDB7B2DA6C56F8C8351 /* Archive+Reading.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Archive+Reading.swift"; path = "Sources/Private/EmbeddedLibraries/ZipFoundation/Archive+Reading.swift"; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9D9A1FD8110C0AAB04410D21E8129AF5 /* MakeViewProviding.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MakeViewProviding.swift; path = Sources/Private/EmbeddedLibraries/EpoxyCore/Model/Providers/MakeViewProviding.swift; sourceTree = "<group>"; };
 		9E079B0C63DB229834F137B0EFB7F098 /* ConstraintMakerRelatable+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "ConstraintMakerRelatable+Extensions.swift"; path = "Sources/ConstraintMakerRelatable+Extensions.swift"; sourceTree = "<group>"; };
 		9EDD76D1C02B8D822CBB8D346E27811D /* TrimPathNode.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TrimPathNode.swift; path = Sources/Private/MainThread/NodeRenderSystem/Nodes/ModifierNodes/TrimPathNode.swift; sourceTree = "<group>"; };
@@ -807,7 +807,7 @@
 		CA7DFC8B90083A7D336835497CF78AEB /* AnimatedImageView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AnimatedImageView.swift; path = Sources/Views/AnimatedImageView.swift; sourceTree = "<group>"; };
 		CB182A54A476B70E92E7B29F2374DBC9 /* RenderingEngineOption.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RenderingEngineOption.swift; path = Sources/Public/Configuration/RenderingEngineOption.swift; sourceTree = "<group>"; };
 		CB58B94A8FC940D7718C9919BFF361C0 /* TransformAnimations.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TransformAnimations.swift; path = Sources/Private/CoreAnimation/Animations/TransformAnimations.swift; sourceTree = "<group>"; };
-		CCC4D2B526FBCB17F19F58C7D37CE234 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; includeInIndex = 1; name = PrivacyInfo.xcprivacy; path = Sources/PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
+		CCC4D2B526FBCB17F19F58C7D37CE234 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xml; name = PrivacyInfo.xcprivacy; path = Sources/PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 		CD5BDB281378C354BCA7DDE68B54A2CD /* FillRenderer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FillRenderer.swift; path = Sources/Private/MainThread/NodeRenderSystem/Nodes/OutputNodes/Renderables/FillRenderer.swift; sourceTree = "<group>"; };
 		CDA0B8D791740FA8AFBDB64CA21DAA12 /* Transform.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Transform.swift; path = Sources/Private/Model/Objects/Transform.swift; sourceTree = "<group>"; };
 		CDA35A6BC07D9C427DCA4C731211AC5E /* BaseCompositionLayer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BaseCompositionLayer.swift; path = Sources/Private/CoreAnimation/Layers/BaseCompositionLayer.swift; sourceTree = "<group>"; };
@@ -1019,14 +1019,13 @@
 				562CC21D301AEBF84B3A9A1B74523C05 /* Resources */,
 				FCF07AA2FA62FE470F1A76447F594B38 /* Support Files */,
 			);
-			name = SnapKit;
 			path = SnapKit;
 			sourceTree = "<group>";
 		};
 		2FACD2D78DFBECBF82A36B77E7739533 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				8A63F6AA6A1D241970B6D28C2970A8B9 /* EasyTipView */,
+				8A63F6AA6A1D241970B6D28C2970A8B9 /* EasyTipView.framework */,
 				C3F44C782D64D7EB20B61CE3844EBFAD /* Kingfisher */,
 				C298ABB78D9B05529B89D8322DB2E7B0 /* Kingfisher-Kingfisher */,
 				51BA97E8B5085EFFB47BC9C0B785CEA7 /* lottie-ios */,
@@ -1158,7 +1157,6 @@
 				F23C2E7F5E08EBCE29AFDF5B8E845870 /* Resources */,
 				A50A48F78ABF7ECDB9616B47BF837712 /* Support Files */,
 			);
-			name = Kingfisher;
 			path = Kingfisher;
 			sourceTree = "<group>";
 		};
@@ -1177,7 +1175,6 @@
 				48B9D8E1670763C2EC940C51A281F967 /* UIKitExtensions.swift */,
 				34503BC387789915D01E2F99F13F24CF /* Support Files */,
 			);
-			name = EasyTipView;
 			path = EasyTipView;
 			sourceTree = "<group>";
 		};
@@ -1481,7 +1478,6 @@
 				D5E56594183598B58C5E6BC9925516B5 /* Resources */,
 				5DEC9C9E11C40A349ED0DDDEAC8C5092 /* Support Files */,
 			);
-			name = "lottie-ios";
 			path = "lottie-ios";
 			sourceTree = "<group>";
 		};
@@ -1625,7 +1621,7 @@
 			);
 			name = EasyTipView;
 			productName = EasyTipView;
-			productReference = 8A63F6AA6A1D241970B6D28C2970A8B9 /* EasyTipView */;
+			productReference = 8A63F6AA6A1D241970B6D28C2970A8B9 /* EasyTipView.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		0B967D7F8561D42493EE289EC8D450D1 /* lottie-ios */ = {
@@ -2440,7 +2436,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/EasyTipView/EasyTipView-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/EasyTipView/EasyTipView-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -2545,7 +2541,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/EasyTipView/EasyTipView-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/EasyTipView/EasyTipView-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
