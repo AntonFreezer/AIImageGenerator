@@ -1,5 +1,15 @@
 {
   "sourceLanguage" : "en",
-  "strings" : {},
+  "strings" : {
+    "Error Description" : {
+
+    },
+    "Hello World!" : {
+
+    },
+    "Refresh" : {
+
+    }
+  },
   "version" : "1.0"
 }
