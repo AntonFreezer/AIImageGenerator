@@ -17,8 +17,20 @@ final class HomeView: CustomView {
         return label
     }()
     
-    //MARK: - Lifecycle & Setup
+    let searchBar: UISearchBar = {
+        let searchBar = UISearchBar()
+        
+        searchBar.placeholder = String(localized: "Type your prompt")
+        searchBar.barTintColor = .white
+        
+        searchBar.showsCancelButton = true
+        searchBar.autocorrectionType = .default
+        searchBar.autocapitalizationType = .none
+        
+        return searchBar
+    }()
     
+    //MARK: - Lifecycle & Setup
     override func configure() {
         setupView()
         setupLayout()
@@ -26,12 +38,16 @@ final class HomeView: CustomView {
     
     private func setupView() {
         backgroundColor = .white
-        addSubview(label)
+        addSubviews(label, searchBar)
         
     }
     
     private func setupLayout() {
-    
+        
+        searchBar.snp.makeConstraints { make in
+            make.leading.trailing.equalTo(safeAreaLayoutGuide).inset(20)
+            make.bottom.equalTo(keyboardLayoutGuide.snp.top)
+        }
     }
     
 }

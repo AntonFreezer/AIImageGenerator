@@ -43,30 +43,38 @@ final class HomeViewController: GenericViewController<HomeView> {
         subject.send(.viewDidLoad)
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        self.showLoading()
-        
-        self.navigationController?.navigationBar.isHidden = true
-    }
-    
     private func setupView() {
-        
+        rootView.searchBar.delegate = self
     }
     
     private func bindViewModel() {
         viewModel.transform(input: output)
             .receive(on: DispatchQueue.main)
             .sink { [unowned self] event in
-                self.hideLoading()
+//                self.hideLoading()
                 
                 switch event {
-                case .customOutput:
-                    break
+                case .didReceiveETA(let seconds):
+                    self.loadingView.etaSeconds = String(seconds)
+                case .didFetchImage:
+                    self.hideLoading()
 //                case .didReceiveError(let error):
 //                    self.showError(error)
                 }
             }.store(in: &cancellables)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.navigationBar.isHidden = true
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        DispatchQueue.main.async {
+            self.rootView.searchBar.becomeFirstResponder()
+        }
     }
     
     private func showError(_ error: Error) {
@@ -84,3 +92,14 @@ final class HomeViewController: GenericViewController<HomeView> {
     
 }
 
+//MARK: - UISearchBarDelegate
+extension HomeViewController: UISearchBarDelegate {
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        self.rootView.searchBar.resignFirstResponder()
+        self.showLoading()
+        
+        self.subject.send(.searchPromptEntered(prompt: searchBar.searchTextField.text))
+    }
+    
+}

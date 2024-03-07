@@ -25,8 +25,9 @@ class GenericViewController<T: UIView>: UIViewController {
 //MARK: - Loadable
 extension GenericViewController: Loadable {
     func showLoading() {
-        loadingView.spinner.startAnimating()
-        rootView.addSubview(loadingView)
+        
+        loadingView.animationView.play()
+        view.addSubview(loadingView)
         loadingView.snp.makeConstraints {
             $0.edges.equalToSuperview()
         }
@@ -34,9 +35,10 @@ extension GenericViewController: Loadable {
     }
     
     func hideLoading() {
-        loadingView.spinner.stopAnimating()
+        loadingView.animationView.stop()
         loadingView.removeFromSuperview()
     }
+
 }
 
 //MARK: - ErrorPresentable

@@ -9,7 +9,7 @@ import Foundation
 
 enum HomeTransition {
     case initialScreen
-    case promptResultScreen
+    case promptResultScreen(imageURL: String)
     
     var identifier: String { "\(self)" }
     
@@ -17,8 +17,8 @@ enum HomeTransition {
         switch self {
         case .initialScreen:
             return HomeCoordinator(router: router)
-        case .promptResultScreen:
-            return PromptResultCoordinator(router: router)
+        case .promptResultScreen(let imageURL):
+            return PromptResultCoordinator(router: router, imageURL: imageURL)
         }
     }
 }

@@ -6,21 +6,25 @@
 //
 
 import UIKit
+import Kingfisher
 
 class PromptResultViewController: UIViewController {
+    
+    var imageURL: String? = nil
+    
+    let imageView: UIImageView = {
+       let imageView = UIImageView()
+        imageView.contentMode = .scaleAspectFill
+        return imageView
+    }()
+    
     override func viewDidLoad() {
+        view.addSubview(imageView)
         
-        let helloWorldLabel: UILabel = {
-            let label = UILabel()
-            label.font = .poppinsSemiBold(ofSize: 36)
-            label.text = String(localized: "Hello World!")
-            return label
-        }()
-        
-        view.addSubview(helloWorldLabel)
-        
-        helloWorldLabel.snp.makeConstraints { make in
-            make.center.equalToSuperview()
+        imageView.snp.makeConstraints { make in
+            make.edges.equalToSuperview()
         }
+        
+        imageView.kf.setImage(with: URL(string: imageURL ?? ""))
     }
 }
