@@ -47,12 +47,18 @@ extension GenericViewController: ErrorPresentable {
         _ title: String,
         message: String?,
         actionTitle: String?,
-        action: ((UIView) -> Void)?
+        action: ((UIView) -> Void)?,
+        actionTitle2: String?,
+        action2: ((UIView) -> Void)?
     ) {
         errorView.title = title
         errorView.message = message
+        
         errorView.actionTitle = actionTitle
         errorView.action = action
+        
+        errorView.actionTitle2 = actionTitle2
+        errorView.action2 = action2
         
         rootView.addSubview(errorView)
         errorView.snp.makeConstraints {

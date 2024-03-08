@@ -30,11 +30,13 @@ final class HomeViewModel: NSObject, IOViewModelType {
     enum Input {
         case viewDidLoad
         case searchPromptEntered(prompt: String?)
+        case retryPromptEntered
     }
     
     enum Output {
         case didReceiveETA(seconds: Int)
         case didFetchImage
+        case didReceiveError(error: Error)
     }
     
     func transform(input: AnyPublisher<Input, Never>) -> AnyPublisher<Output, Never> {
@@ -43,6 +45,8 @@ final class HomeViewModel: NSObject, IOViewModelType {
             case .viewDidLoad:
                 break
             case .searchPromptEntered(let prompt):
+                Task { await mockImageRequest() }
+            case .retryPromptEntered:
                 Task { await mockImageRequest() }
             }
         }.store(in: &cancellables)
@@ -61,6 +65,7 @@ private extension HomeViewModel {
         guard let mockURL = mockImage.output.first?.absoluteString,
               mockImage.status == "success"
         else {
+            subject.send(.didReceiveError(error: URLError(.badURL)))
             return
         }
         

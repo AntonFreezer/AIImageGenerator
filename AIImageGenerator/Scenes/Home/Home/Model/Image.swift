@@ -16,7 +16,7 @@ struct AiImage: Hashable {
     
     
     static let mockImage = AiImage(
-        status: "success",
+        status: "succes",
         id: 123456789,
         eta: nil,
         output: [URL(string:         "https://pub-3626123a908346a7a8be8d9295f44e26.r2.dev/generations/0-a068c493-a5c4-48a2-8c6c-88c616db7f0c.png")!],

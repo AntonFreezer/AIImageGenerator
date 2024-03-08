@@ -64,6 +64,10 @@ extension HomeView {
     public func hideKeyboard() {
         searchBar.resignFirstResponder()
     }
+    
+    public func clearSearch() {
+        searchBar.searchTextField.text = ""
+    }
 }
 
 //MARK: - Configurable

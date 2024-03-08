@@ -57,9 +57,9 @@ final class HomeViewController: GenericViewController<HomeView> {
                     self.loadingView.etaSeconds = String(seconds)
                 case .didFetchImage:
                     self.hideLoading()
-//                case .didReceiveError(let error):
-//                    self.hideLoading()
-//                    self.showError(error)
+                case .didReceiveError(let error):
+                    self.hideLoading()
+                    self.showError(error)
                 }
             }.store(in: &cancellables)
     }
@@ -87,13 +87,18 @@ final class HomeViewController: GenericViewController<HomeView> {
         self.showError(
             String(localized: "Error Description"),
             message: error.localizedDescription,
-            actionTitle: String(localized: "Refresh"),
+            actionTitle: String(localized: "Try again"),
             action: { [weak self] stub in
                 stub.removeFromSuperview()
                 self?.showLoading()
-                self?.subject.send(.viewDidLoad)
-            }
-        )
+                self?.subject.send(.retryPromptEntered)
+            },
+            actionTitle2: String(localized: "Cancel"),
+            action2: { [weak self] stub in
+                stub.removeFromSuperview()
+                self?.rootView.clearSearch()
+                self?.rootView.showKeyboard()
+            })
     }
     
 }

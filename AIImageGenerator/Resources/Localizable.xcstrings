@@ -1,10 +1,13 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
+    "Cancel" : {
+
+    },
     "Error Description" : {
 
     },
-    "Refresh" : {
+    "Try again" : {
 
     },
     "Type your prompt" : {
