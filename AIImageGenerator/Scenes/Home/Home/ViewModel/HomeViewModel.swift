@@ -55,8 +55,14 @@ final class HomeViewModel: NSObject, IOViewModelType {
 //MARK: - Network
 private extension HomeViewModel {
     func mockImageRequest() async {
-        var mockETA = 1
-        let mockURL = "https://pub-3626123a908346a7a8be8d9295f44e26.r2.dev/generations/0-abf434d3-a22a-41a1-a8ab-79a1a9a58b97.png"
+        
+        let mockImage = AiImage.mockImage
+        var mockETA = mockImage.eta ?? 0
+        guard let mockURL = mockImage.output.first?.absoluteString,
+              mockImage.status == "success"
+        else {
+            return
+        }
         
         var timerSubscription: Cancellable?
         timerSubscription = Timer.publish(every: 1, on: .main, in: .default)
@@ -71,14 +77,16 @@ private extension HomeViewModel {
                 mockETA -= 1
             } else {
                 timerSubscription?.cancel()
-                DispatchQueue.main.asyncAfter(deadline: .now() + 1) { [weak self] in
-                    self?.subject.send(.didFetchImage)
-                    
-                    if let router = self?.router as? (any HomeRouter) {
-                        router.process(route: .promptResultScreen(imageURL: mockURL))
-                    }
-                }
+                goToPromptResult()
             }
+        }
+        
+        func goToPromptResult() {
+                self.subject.send(.didFetchImage)
+                if let router = self.router as? (any HomeRouter) {
+                    router.process(route: .promptResultScreen(imageURL: mockURL))
+                }
+            
         }
         
     }

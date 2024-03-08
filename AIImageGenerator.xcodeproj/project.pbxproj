@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		96596B592B9B4F1800F28615 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96596B582B9B4F1800F28615 /* Image.swift */; };
 		969517C02B9872B400200039 /* loading.json in Resources */ = {isa = PBXBuildFile; fileRef = 969517BF2B9872B400200039 /* loading.json */; };
 		969517C82B98816800200039 /* Poppins-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 969517C72B98816800200039 /* Poppins-Medium.ttf */; };
 		96A4AFC52B97664600C1DB6A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A4AFC42B97664600C1DB6A /* AppDelegate.swift */; };
@@ -79,6 +80,7 @@
 
 /* Begin PBXFileReference section */
 		21725FE98F3FBBACA00FDB21 /* Pods-AIImageGenerator.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AIImageGenerator.debug.xcconfig"; path = "Target Support Files/Pods-AIImageGenerator/Pods-AIImageGenerator.debug.xcconfig"; sourceTree = "<group>"; };
+		96596B582B9B4F1800F28615 /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
 		969517BF2B9872B400200039 /* loading.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = loading.json; sourceTree = "<group>"; };
 		969517C72B98816800200039 /* Poppins-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Medium.ttf"; sourceTree = "<group>"; };
 		96A4AFC12B97664600C1DB6A /* AIImageGenerator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AIImageGenerator.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -384,6 +386,7 @@
 		96A4B0582B97709900C1DB6A /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				96596B582B9B4F1800F28615 /* Image.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -590,6 +593,7 @@
 				96A4B03B2B976EA200C1DB6A /* CustomView.swift in Sources */,
 				96A4AFC52B97664600C1DB6A /* AppDelegate.swift in Sources */,
 				96A4B0762B97709900C1DB6A /* HomeViewController.swift in Sources */,
+				96596B592B9B4F1800F28615 /* Image.swift in Sources */,
 				96A4B01C2B9769BF00C1DB6A /* BasicViewModelType.swift in Sources */,
 				96A4B03D2B976EB200C1DB6A /* NavigationController.swift in Sources */,
 				96A4B07E2B9775F500C1DB6A /* UIFont+Extension.swift in Sources */,
