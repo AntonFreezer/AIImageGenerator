@@ -51,7 +51,6 @@ final class HomeViewController: GenericViewController<HomeView> {
         viewModel.transform(input: output)
             .receive(on: DispatchQueue.main)
             .sink { [unowned self] event in
-//                self.hideLoading()
                 
                 switch event {
                 case .didReceiveETA(let seconds):
@@ -59,6 +58,7 @@ final class HomeViewController: GenericViewController<HomeView> {
                 case .didFetchImage:
                     self.hideLoading()
 //                case .didReceiveError(let error):
+//                    self.hideLoading()
 //                    self.showError(error)
                 }
             }.store(in: &cancellables)
@@ -67,14 +67,20 @@ final class HomeViewController: GenericViewController<HomeView> {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.navigationBar.isHidden = true
+        
+        rootView.showKeyboard()
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        DispatchQueue.main.async {
-            self.rootView.searchBar.becomeFirstResponder()
-        }
+        rootView.update(with: .init(
+            image: UIImage(systemName: "arrow.up"),
+            title: "",
+            action: { prompt in
+                self.searchPromptEntered(prompt)
+            }
+        ))
     }
     
     private func showError(_ error: Error) {
@@ -96,10 +102,17 @@ final class HomeViewController: GenericViewController<HomeView> {
 extension HomeViewController: UISearchBarDelegate {
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        self.rootView.searchBar.resignFirstResponder()
-        self.showLoading()
+        if let prompt = searchBar.searchTextField.text {
+            searchPromptEntered(prompt)
+        }
+    }
+    
+    func searchPromptEntered(_ prompt: String) {
+        guard !prompt.isEmpty else { return }
         
-        self.subject.send(.searchPromptEntered(prompt: searchBar.searchTextField.text))
+        self.rootView.hideKeyboard()
+        self.showLoading()
+        self.subject.send(.searchPromptEntered(prompt: prompt))
     }
     
 }
