@@ -1,5 +1,18 @@
 {
   "sourceLanguage" : "en",
-  "strings" : {},
+  "strings" : {
+    "Cancel" : {
+
+    },
+    "Error Description" : {
+
+    },
+    "Try again" : {
+
+    },
+    "Type your prompt" : {
+
+    }
+  },
   "version" : "1.0"
 }

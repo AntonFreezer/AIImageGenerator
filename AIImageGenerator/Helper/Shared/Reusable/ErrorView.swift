@@ -16,7 +16,7 @@ final class ErrorView: CustomView {
                 with: .init(
                     text: title,
                     font: .boldSystemFont(ofSize: 16),
-                    textColor: .white,
+                    textColor: .black,
                     numberOfLines: 2,
                     alignment: .center
                 )
@@ -30,7 +30,7 @@ final class ErrorView: CustomView {
                 with: .init(
                     text: message ?? "",
                     font: .italicSystemFont(ofSize: 14),
-                    textColor: .white,
+                    textColor: .black,
                     numberOfLines: 3,
                     alignment: .center
                 )
@@ -51,10 +51,23 @@ final class ErrorView: CustomView {
         }
     }
     
+    var actionTitle2: String? {
+        didSet {
+            actionButton2.setTitle(actionTitle2, for: .normal)
+        }
+    }
+    
+    var action2: ((UIView) -> Void)? {
+        didSet {
+            actionButton2.isHidden = action2 == nil
+        }
+    }
+    
     //MARK: - UI Components
     private let titleLabel = UILabel()
     private let messageLabel = UILabel()
     private let actionButton = UIButton(type: .system)
+    private let actionButton2 = UIButton(type: .system)
     
     
     //MARK: - Setup & Lifecycle
@@ -68,15 +81,25 @@ final class ErrorView: CustomView {
     }
     
     private func configureViews() {
-        addSubviews(titleLabel, messageLabel, actionButton)
-    
+        addSubviews(titleLabel, messageLabel, actionButton, actionButton2)
+        
+        // first action
         actionButton.addTarget(self, action: #selector(didTapActionButton), for: .touchUpInside)
         var configuration = UIButton.Configuration.filled()
-        configuration.baseBackgroundColor = .darkGray
+        configuration.baseBackgroundColor = .purple
         configuration.baseForegroundColor = .white
         configuration.titleAlignment = .center
         configuration.contentInsets = .init(top: 8, leading: 16, bottom: 8, trailing: 16)
         actionButton.configuration = configuration
+        
+        //second action
+        actionButton2.addTarget(self, action: #selector(didTapActionButton2), for: .touchUpInside)
+        var configuration2 = UIButton.Configuration.filled()
+        configuration2.baseBackgroundColor = .darkGray
+        configuration2.baseForegroundColor = .white
+        configuration2.titleAlignment = .center
+        configuration2.contentInsets = .init(top: 8, leading: 16, bottom: 8, trailing: 16)
+        actionButton2.configuration = configuration2
         
         setupConstraints()
     }
@@ -96,6 +119,12 @@ final class ErrorView: CustomView {
             make.top.equalTo(messageLabel.snp.bottom).offset(16)
             make.centerX.equalToSuperview()
             make.leading.trailing.equalToSuperview().inset(16)
+        }
+        
+        actionButton2.snp.makeConstraints { make in
+            make.top.equalTo(actionButton.snp.bottom).offset(8)
+            make.centerX.equalToSuperview()
+            make.leading.trailing.equalToSuperview().inset(16)
             make.bottom.lessThanOrEqualToSuperview().inset(16)
         }
     }
@@ -103,5 +132,9 @@ final class ErrorView: CustomView {
     //MARK: - Button Actions
     @objc private func didTapActionButton() {
         action?(self)
+    }
+    
+    @objc private func didTapActionButton2() {
+        action2?(self)
     }
 }

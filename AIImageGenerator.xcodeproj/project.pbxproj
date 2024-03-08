@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		96596B592B9B4F1800F28615 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96596B582B9B4F1800F28615 /* Image.swift */; };
+		969517C02B9872B400200039 /* loading.json in Resources */ = {isa = PBXBuildFile; fileRef = 969517BF2B9872B400200039 /* loading.json */; };
+		969517C82B98816800200039 /* Poppins-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 969517C72B98816800200039 /* Poppins-Medium.ttf */; };
 		96A4AFC52B97664600C1DB6A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A4AFC42B97664600C1DB6A /* AppDelegate.swift */; };
 		96A4AFC72B97664600C1DB6A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A4AFC62B97664600C1DB6A /* SceneDelegate.swift */; };
 		96A4AFCE2B97664700C1DB6A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 96A4AFCD2B97664700C1DB6A /* Assets.xcassets */; };
@@ -77,6 +80,9 @@
 
 /* Begin PBXFileReference section */
 		21725FE98F3FBBACA00FDB21 /* Pods-AIImageGenerator.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AIImageGenerator.debug.xcconfig"; path = "Target Support Files/Pods-AIImageGenerator/Pods-AIImageGenerator.debug.xcconfig"; sourceTree = "<group>"; };
+		96596B582B9B4F1800F28615 /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
+		969517BF2B9872B400200039 /* loading.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = loading.json; sourceTree = "<group>"; };
+		969517C72B98816800200039 /* Poppins-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Medium.ttf"; sourceTree = "<group>"; };
 		96A4AFC12B97664600C1DB6A /* AIImageGenerator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AIImageGenerator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		96A4AFC42B97664600C1DB6A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		96A4AFC62B97664600C1DB6A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -130,6 +136,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		969517BC2B9871CC00200039 /* Lottie */ = {
+			isa = PBXGroup;
+			children = (
+				969517BF2B9872B400200039 /* loading.json */,
+			);
+			path = Lottie;
+			sourceTree = "<group>";
+		};
 		96A4AFB82B97664600C1DB6A = {
 			isa = PBXGroup;
 			children = (
@@ -179,6 +193,7 @@
 		96A4AFDA2B97674B00C1DB6A /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				969517BC2B9871CC00200039 /* Lottie */,
 				96A4B0182B97699400C1DB6A /* Fonts */,
 				96A4AFCD2B97664700C1DB6A /* Assets.xcassets */,
 				96A4AFCF2B97664700C1DB6A /* LaunchScreen.storyboard */,
@@ -275,6 +290,7 @@
 		96A4B0182B97699400C1DB6A /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
+				969517C72B98816800200039 /* Poppins-Medium.ttf */,
 			);
 			path = Fonts;
 			sourceTree = "<group>";
@@ -351,10 +367,10 @@
 			isa = PBXGroup;
 			children = (
 				96A4B0572B97709900C1DB6A /* HomeCoordinator.swift */,
+				96A4B0612B97709900C1DB6A /* ViewController */,
 				96A4B0522B97709900C1DB6A /* ViewModel */,
 				96A4B0582B97709900C1DB6A /* Model */,
 				96A4B05B2B97709900C1DB6A /* View */,
-				96A4B0612B97709900C1DB6A /* ViewController */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -370,6 +386,7 @@
 		96A4B0582B97709900C1DB6A /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				96596B582B9B4F1800F28615 /* Image.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -413,7 +430,6 @@
 				21725FE98F3FBBACA00FDB21 /* Pods-AIImageGenerator.debug.xcconfig */,
 				BB20173725688DA912620C81 /* Pods-AIImageGenerator.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -503,7 +519,9 @@
 			files = (
 				96A4AFD12B97664700C1DB6A /* LaunchScreen.storyboard in Resources */,
 				96A4AFCE2B97664700C1DB6A /* Assets.xcassets in Resources */,
+				969517C02B9872B400200039 /* loading.json in Resources */,
 				96A4B0802B97761800C1DB6A /* Localizable.xcstrings in Resources */,
+				969517C82B98816800200039 /* Poppins-Medium.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -575,6 +593,7 @@
 				96A4B03B2B976EA200C1DB6A /* CustomView.swift in Sources */,
 				96A4AFC52B97664600C1DB6A /* AppDelegate.swift in Sources */,
 				96A4B0762B97709900C1DB6A /* HomeViewController.swift in Sources */,
+				96596B592B9B4F1800F28615 /* Image.swift in Sources */,
 				96A4B01C2B9769BF00C1DB6A /* BasicViewModelType.swift in Sources */,
 				96A4B03D2B976EB200C1DB6A /* NavigationController.swift in Sources */,
 				96A4B07E2B9775F500C1DB6A /* UIFont+Extension.swift in Sources */,
@@ -639,7 +658,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -702,7 +721,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;

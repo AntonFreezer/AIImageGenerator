@@ -12,7 +12,9 @@ protocol ErrorPresentable {
         _ title: String,
         message: String?,
         actionTitle: String?,
-        action: ((UIView) -> Void)?
+        action: ((UIView) -> Void)?,
+        actionTitle2: String?,
+        action2: ((UIView) -> Void)?
     )
     
     func hideError()

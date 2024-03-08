@@ -43,44 +43,81 @@ final class HomeViewController: GenericViewController<HomeView> {
         subject.send(.viewDidLoad)
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        self.showLoading()
-        
-        self.navigationController?.navigationBar.isHidden = true
-    }
-    
     private func setupView() {
-        
+        rootView.searchBar.delegate = self
     }
     
     private func bindViewModel() {
         viewModel.transform(input: output)
             .receive(on: DispatchQueue.main)
             .sink { [unowned self] event in
-                self.hideLoading()
                 
                 switch event {
-                case .customOutput:
-                    break
-//                case .didReceiveError(let error):
-//                    self.showError(error)
+                case .didReceiveETA(let seconds):
+                    self.loadingView.etaSeconds = String(seconds)
+                case .didFetchImage:
+                    self.hideLoading()
+                case .didReceiveError(let error):
+                    self.hideLoading()
+                    self.showError(error)
                 }
             }.store(in: &cancellables)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.navigationBar.isHidden = true
+        
+        rootView.showKeyboard()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        rootView.update(with: .init(
+            image: UIImage(systemName: "arrow.up"),
+            title: "",
+            action: { prompt in
+                self.searchPromptEntered(prompt)
+            }
+        ))
     }
     
     private func showError(_ error: Error) {
         self.showError(
             String(localized: "Error Description"),
             message: error.localizedDescription,
-            actionTitle: String(localized: "Refresh"),
+            actionTitle: String(localized: "Try again"),
             action: { [weak self] stub in
                 stub.removeFromSuperview()
                 self?.showLoading()
-                self?.subject.send(.viewDidLoad)
-            }
-        )
+                self?.subject.send(.retryPromptEntered)
+            },
+            actionTitle2: String(localized: "Cancel"),
+            action2: { [weak self] stub in
+                stub.removeFromSuperview()
+                self?.rootView.clearSearch()
+                self?.rootView.showKeyboard()
+            })
     }
     
 }
 
+//MARK: - UISearchBarDelegate
+extension HomeViewController: UISearchBarDelegate {
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        if let prompt = searchBar.searchTextField.text {
+            searchPromptEntered(prompt)
+        }
+    }
+    
+    func searchPromptEntered(_ prompt: String) {
+        guard !prompt.isEmpty else { return }
+        
+        self.rootView.hideKeyboard()
+        self.showLoading()
+        self.subject.send(.searchPromptEntered(prompt: prompt))
+    }
+    
+}
